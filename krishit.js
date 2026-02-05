@@ -1,20 +1,18 @@
-// Nested scope
-function first() {
-  const x = 100;
+// function Declaration ;
 
-  function second() {
-    const y = 200;
-    console.log(x + y);
-  }
-
-  second();
+function addRupess(value){
+  return '$'  +  value;
+  
 }
-first();
+console.log(addRupess( 300));
 
-if (true) {
-  const x = 100;
+//function Experssion
 
-  if (x === 100);
-  const y = 500;
-  console.log(x + y);
-}
+const krishit = function(value){
+  return '$' + value
+};
+
+console.log(krishit(400));
+
+
+ 
