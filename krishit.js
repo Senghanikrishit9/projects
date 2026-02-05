@@ -1,18 +1,24 @@
-// function Declaration ;
+// Arow functions syntax -:
+const number = (a,b) =>{
+  return a+b;
+} ;
+ console.log(number(1,2));
 
-function addRupess(value){
-  return '$'  +  value;
-  
-}
-console.log(addRupess( 300));
+// Subtract 
+ const sub = (a,b) => {
+  return a-b;
+ };
+ console.log(sub(23,45));
 
-//function Experssion
-
-const krishit = function(value){
-  return '$' + value
+// multiple 
+const multiple = (a,b) => {
+  return a*b;
 };
+console.log(multiple(34,56));
 
-console.log(krishit(400));
+// Returining a object
+const createobj = () => ({
+  name : "krishit"
+});
 
-
- 
+console.log(createobj(name));
