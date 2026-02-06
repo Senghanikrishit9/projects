@@ -1,24 +1,19 @@
-// Arow functions syntax -:
-const number = (a,b) =>{
-  return a+b;
-} ;
- console.log(number(1,2));
+// function challage 
+// chanllage 1
+ function getCelsius (f) {
+  const celsius = ((f-32)*5);
+  return celsius;
+ }
 
-// Subtract 
- const sub = (a,b) => {
-  return a-b;
+console.log(getCelsius(45));
+
+// challage 2 
+function minMax(array) {
+  const min = Math.min(...array);
+  const max= Math.max(...array);
+ return{
+  min,
+  max,
  };
- console.log(sub(23,45));
-
-// multiple 
-const multiple = (a,b) => {
-  return a*b;
-};
-console.log(multiple(34,56));
-
-// Returining a object
-const createobj = () => ({
-  name : "krishit"
-});
-
-console.log(createobj(name));
+}
+ console.log(minMax([12,34,56,78,90]));
