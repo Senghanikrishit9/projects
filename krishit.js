@@ -1,19 +1,12 @@
-// function challage 
-// chanllage 1
- function getCelsius (f) {
-  const celsius = ((f-32)*5);
-  return celsius;
- }
-
-console.log(getCelsius(45));
-
-// challage 2 
-function minMax(array) {
-  const min = Math.min(...array);
-  const max= Math.max(...array);
- return{
-  min,
-  max,
- };
+// Exection Context
+let x = 100
+let y = 50 
+function getSum(n1,n2){
+  let sum = n1 + n2;
+  return sum;
 }
- console.log(minMax([12,34,56,78,90]));
+const sum1 = getSum(x,y);
+const sum2 =getSum(10,5);
+
+console.log(sum1,sum2);
+
