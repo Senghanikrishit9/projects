@@ -1,21 +1,26 @@
-console.log( 10 > 20 && 30 > 15);
-console.log( 10 > 20 || 30 > 12);
+// 1. ||= assigns the right side value only if the left is a flase value.
+let a = false;
 
-// && will return first flasy value or the last value !
-let a;
- 
-a = 10 && 20;
-a = 10 && 20 && 30;
+if(!a){
+  a = 10;
+}
 
+a ||= 10;
 console.log(a);
+// 2. &&= assigns the right side value only if the left value is a turthy.
 
-const  posts = [];
-posts.length > 0 && console.log(posts[0]);
+let b = 10;
 
-// || will return the first turthy value or the last value !
+if(b){
+  b = 20;
+}
 
-let b;
+b = b && 20;
+console.log(b); 
+// 3. ??= assigns the right  side value only if the left is null undefined.
+let c = null;
 
-b = 20 || 30;
-b = 200 || 40 || 50;
-console.log(b);
+if(c === null || c === undefined){
+  c = 30;
+}
+console.log(c);
