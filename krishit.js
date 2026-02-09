@@ -1,28 +1,21 @@
-const emial = "krishitsenghani@22gmail.com";
+console.log( 10 > 20 && 30 > 15);
+console.log( 10 > 20 || 30 > 12);
 
-if (emial) {
-  console.log("you enter your email");
-}
+// && will return first flasy value or the last value !
+let a;
+ 
+a = 10 && 20;
+a = 10 && 20 && 30;
 
-const x = false;
+console.log(a);
 
-if (x) {
-  console.log("this is a turthy");
-} else {
-  console.log("this is a flasy");
-}
-console.log(Boolean(x));
+const  posts = [];
+posts.length > 0 && console.log(posts[0]);
 
-const children = 0;
-if (children !== undefined) {
-  console.log(`you have ${children} numbers of children`);
-} else {
-  console.log("Please enter you children ");
-}
+// || will return the first turthy value or the last value !
 
-const post = ["post"];
-if (post.length > 0) {
-  console.log("list posts");
-} else {
-  console.log("No post to list");
-}
+let b;
+
+b = 20 || 30;
+b = 200 || 40 || 50;
+console.log(b);
