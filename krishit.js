@@ -1,11 +1,17 @@
-// For loop
-for (let i = 0; i < 5;i ++){
-  console.log("Number" + i)
-}
+// break loop
+// for(let i=0;i<=30;i++){
+//   if(i===20){
+//     console.log("loops is break");
+//     break;
+//   };
+//   console.log(i);
+// };
 
-  for (let i = 0; i <=10;i ++){
-    if(i === 7){
-      console.log("7 is my luchy number")
-    }
-  console.log("Number" + i)
+//continue loop 
+for (let i =0;i<=20;i++){
+  if(i===13){
+    console.log("skipped the 13");
+    continue;
   }
+  console.log(i);
+}
