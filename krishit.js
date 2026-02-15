@@ -1,20 +1,27 @@
-// 1. Array filters
-const word = ['krishit','krish','megh'];
+// Array.map Method 
+const Array1 =[10,20,30,40];
 
-const result =word.filter(word => word.length >3)
-   console.log(result);
-
-
-// 2. Long version
-let number = [1,2,3,4,5,6,7,8,9,10];
-
-const output = number.filter(function (number){
-  return number %  2 === 0;
-})
-
+const output = Array1.map(Array1 => Array1 + 2);
 console.log(output);
 
-// 3.Short version
 
-const outputs = number.filter(number => number %  3 === 0);
-   console.log(outputs);
+const nav = [23,45,67,89,90];
+
+const out = nav.map(nav => 'nav' + nav);
+console.log(nav);
+
+
+
+
+const company = {
+   name : "tata",
+   categrios : "nanoo"
+};
+ 
+const comapnies = company.map((company) => {
+   return{
+      name : company.name,
+      categrios : company.categrios
+   }
+});
+console.log(comapnies);
