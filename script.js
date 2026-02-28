@@ -1,5 +1,5 @@
-const btn = document.querySelector("button");
-btn.addEventListener("click", () =>{
-  console.log("hello my child");
+const btn = document.querySelector("#btn");
+btn.addEventListener("click",() => {
+  console.log("hello");
   document.querySelector("body").style.background = "blue";
 })
