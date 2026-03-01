@@ -1,5 +1,9 @@
-const btn = document.querySelector("#btn");
-btn.addEventListener("click",() => {
-  console.log("hello");
-  document.querySelector("body").style.background = "blue";
-})
+const btn = document.querySelector(".btn")
+// 1.Method 
+btn.addEventListener("click", () => {
+  console.log("button is cliked")
+});
+// 2. Method 
+btn.addEventListener("click",function (){
+  console.log("button was clicked");
+});
