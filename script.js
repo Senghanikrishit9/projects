@@ -1,15 +1,14 @@
-// 1. synchronous : task run onw after another .the next task waits until the pervious task finishes
+const fs = require('fs');
+const filepath = 'text.txt';
 
-console.log("hello");
-console.log("krishti");
-console.log("you");
+const data = fs.readFileSync(filepath,{encoding : 'utf-8'});
 
-// 2. asynchronous : task can run without waiting  the previous tasks
+console.log(data);
+let sum = 0;
+for(let i =1; i<=10;i++){
+    sum = sum + i;
+}
 
-console.log("start");
-setTimeout(() => {
-    console.log("processing...");
-},1000);
-console.log("End");
+console.log('sum : ',sum);
 
 
