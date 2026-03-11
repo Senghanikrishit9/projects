@@ -1,14 +1,12 @@
-const fs = require('fs');
-const filepath = 'text.txt';
+// settimeout & cleartimeout
+setTimeout(function() {
+    console.log("hello from callback");
+},2000);
 
-const data = fs.readFileSync(filepath,{encoding : 'utf-8'});
+console.log("hello from global");
 
-console.log(data);
-let sum = 0;
-for(let i =1; i<=10;i++){
-    sum = sum + i;
+setTimeout(changetext,2000);
+
+function changetext () {
+    document.querySelector("h2").textContent = "hello from callback";
 }
-
-console.log('sum : ',sum);
-
-
