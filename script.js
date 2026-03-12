@@ -1,12 +1,29 @@
-// settimeout & cleartimeout
-setTimeout(function() {
-    console.log("hello from callback");
-},2000);
+// const intervalID = setInterval(mycallback, 1000, 'marvel');
+// function mycallback(a) {
+//     console.log(a, Date.now());
+// };
 
-console.log("hello from global");
+let intervalID;
 
-setTimeout(changetext,2000);
-
-function changetext () {
-    document.querySelector("h2").textContent = "hello from callback";
+function startChange(){
+    if(!intervalID){
+        intervalID = setInterval(changeColor,1000);
+    }
 }
+
+function changeColor() {
+  if(document.body.style.backgroundColor !== 'black'){
+    document.body.style.backgroundColor = 'black';
+    document.body.style.color =  'white';
+  }else{
+    document.body.style.backgroundColor = 'white';
+    document.body.style.color = 'black';
+  }
+}
+
+function stopchange() {
+    clearInterval(intervalID)
+}
+
+document.getElementById('start').addEventListener('click', startChange);
+document.getElementById('stop').addEventListener('click', stopchange);
