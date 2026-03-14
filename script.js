@@ -1,29 +1,31 @@
-// const intervalID = setInterval(mycallback, 1000, 'marvel');
-// function mycallback(a) {
-//     console.log(a, Date.now());
-// };
-
-let intervalID;
-
-function startChange(){
-    if(!intervalID){
-        intervalID = setInterval(changeColor,1000);
-    }
+function toggle(e){
+  e.target.classList.toggle('danger')
 }
 
-function changeColor() {
-  if(document.body.style.backgroundColor !== 'black'){
-    document.body.style.backgroundColor = 'black';
-    document.body.style.color =  'white';
-  }else{
-    document.body.style.backgroundColor = 'white';
-    document.body.style.color = 'black';
-  }
+document.querySelector("button").addEventListener('click',toggle);
+
+const post = [
+  {tittle: 'post one', body : "this is post one"},
+  {tittle: 'post two', body : "this is post two"}
+];
+
+function createpost(post,cb) {
+  setTimeout(() => {
+  post.push(post);
+  cb();
+  },2000);
 }
 
-function stopchange() {
-    clearInterval(intervalID)
+function getpost () {
+  setTimeout(() => {
+  post.forEach(function(post){
+    const div = document.createElement('div');
+    div.innerHTML = `<strong>${post.tittle}</strong> - ${post.body}`;
+    document.querySelector("#post").appendChild(div);
+  });
+  },1000);
 }
 
-document.getElementById('start').addEventListener('click', startChange);
-document.getElementById('stop').addEventListener('click', stopchange);
+createpost({tittle : 'post three',  body : "this is post three"},getpost);
+
+getpost();
