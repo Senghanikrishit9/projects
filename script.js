@@ -1,31 +1,13 @@
-function toggle(e){
-  e.target.classList.toggle('danger')
-}
+// http requests 
 
-document.querySelector("button").addEventListener('click',toggle);
+const xhr = new XMLHttpRequest();
 
-const post = [
-  {tittle: 'post one', body : "this is post one"},
-  {tittle: 'post two', body : "this is post two"}
-];
+xhr.open('Get','./movies.json');
 
-function createpost(post,cb) {
-  setTimeout(() => {
-  post.push(post);
-  cb();
-  },2000);
-}
+xhr.onreadystatechange = function() {
+ if(this.readyState === 4 && this.status === 200){
+  console.log(JSON.parse(this.responseText));
+ }
+};
 
-function getpost () {
-  setTimeout(() => {
-  post.forEach(function(post){
-    const div = document.createElement('div');
-    div.innerHTML = `<strong>${post.tittle}</strong> - ${post.body}`;
-    document.querySelector("#post").appendChild(div);
-  });
-  },1000);
-}
-
-createpost({tittle : 'post three',  body : "this is post three"},getpost);
-
-getpost();
+xhr.send();
