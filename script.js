@@ -1,35 +1,17 @@
-function getData(endpoint) {
-  return new Promise((resolve, reject) => {
-    const xhr = new XMLHttpRequest();
+// Fecthing the json file in js file !
 
-    xhr.open("GET", endpoint);
+fetch("./movie.json")
+.then((response) => response.json())
+.then((data) => console.log(data));
 
-    xhr.onreadystatechange = function () {
-      if (this.readyState === 4) {
-        if (this.status === 200) {
-          resolve(JSON.parse(this.responseText));
-        } else {
-          reject('something went wrong');
-        }
-      }
-    };
+// Fecthing the text file in js file !
 
-    setTimeout(() => {
-      xhr.send();
-    }, Math.floor(Math.random() * 3000) + 1000);
-  });
-}
+fetch("./text.txt")
+.then((response) => response.text())
+.then((data) => console.log(data));
 
-getData('./movies.json')
-  .then((movie) => {
-    console.log(movie);
-    return getData('./actor.json'); 
-  })
-  .then((actor) => {
-    console.log(actor);
-    return getData('./director.json'); 
-  })
-  .then((director) => {
-    console.log(director);
-  })
-  .catch((error) => console.log(error));
+// fetching the API
+
+fetch('https://api.github.com/users')
+.then((response) => response.json())
+.then((data) => console.log(data));
