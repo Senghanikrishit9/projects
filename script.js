@@ -1,17 +1,25 @@
-// Fecthing the json file in js file !
 
-fetch("./movie.json")
-.then((response) => response.json())
-.then((data) => console.log(data));
+document.querySelector("button").addEventListener("click", () => {
 
-// Fecthing the text file in js file !
+    function fetchuser() {
+        fetch('https://randomuser.me/api')
+            .then((res) => res.json())
+            .then((data) => {
+                displayuser(data.results[0])
+            });
+    }
+    function displayuser(user) {
+        if (user.gender === 'male') {
+            document.querySelector('body').style.background = 'red'
+        } else {
+            document.querySelector('body').style.background = 'pink'
+        }
+    }
 
-fetch("./text.txt")
-.then((response) => response.text())
-.then((data) => console.log(data));
+    console.log(displayuser);
 
-// fetching the API
+fetchuser();
+})
 
-fetch('https://api.github.com/users')
-.then((response) => response.json())
-.then((data) => console.log(data));
+
+
