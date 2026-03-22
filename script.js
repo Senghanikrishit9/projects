@@ -1,25 +1,34 @@
-
-document.querySelector("button").addEventListener("click", () => {
-
-    function fetchuser() {
-        fetch('https://randomuser.me/api')
-            .then((res) => res.json())
-            .then((data) => {
-                displayuser(data.results[0])
-            });
-    }
-    function displayuser(user) {
-        if (user.gender === 'male') {
-            document.querySelector('body').style.background = 'red'
-        } else {
-            document.querySelector('body').style.background = 'pink'
+function createPost({ title, body }) {
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        body: JSON.stringify({
+            title,
+            body
+        }),
+        headers: {
+            'Content-Type': 'application/json',
+            token: 'abc123'
         }
-    }
+    }).then((res) => res.json())
+        .then((data) => console.log(data))
+};
 
-    console.log(displayuser);
-
-fetchuser();
-})
-
+createPost({ title: 'My Post', body: 'This is my body' });
 
 
+function createPost1({ title, body }) {
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POSt',
+        body: JSON.stringify({  
+            title,
+            body
+        }),
+        headers: {
+            'content-type': 'application/json',
+            token: 'abc123'
+        }
+    }).then((res) => res.json())
+        .then((data) => console.log(data));
+}
+
+createPost1({ title: "my post 1", body: 'this is my second body' });
