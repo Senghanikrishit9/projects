@@ -1,16 +1,18 @@
-const apiurl = 'https://jsonplaceholder.typicode.com/todos';
 
-const getodo = () =>{
-    fetch(apiurl + '?_limit=5')
-    .then(res => res.json())
-    .then(data => {
-        data.forEach((todo) => {
-          const div = document.createElement('div')
-          div.appendChild(document.createTextNode(todo.title));
-
-          document.getElementById('todo').appendChild(div);
-        });
+fetch('http://hello123.net')
+    .then((response) => {
+        console.log(response.status);
     })
-}
+    .then(() => {
+        console.log("success")
+    })
+    .catch((error) => {
+        console.log(error)
+    });
 
-getodo();
+
+fetch("https://jsonplaceholder.typicode.com/posts")
+    .then((res) => res.json())
+    .then((data) => {
+        console.log(data)
+    });
