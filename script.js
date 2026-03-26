@@ -1,18 +1,33 @@
-
-fetch('http://hello123.net')
-    .then((response) => {
-        console.log(response.status);
-    })
-    .then(() => {
-        console.log("success")
-    })
-    .catch((error) => {
-        console.log(error)
-    });
+try{
+    console.log(x);
+} catch(error) {
+    console.log("Error" + error);
+}
 
 
-fetch("https://jsonplaceholder.typicode.com/posts")
+
+fetch('https://jsonplaceholder.typicode.com/posts')
     .then((res) => res.json())
     .then((data) => {
         console.log(data)
-    });
+    })
+    try{
+        
+    }catch(error){
+      console.log("Error" + error)
+    }
+
+
+
+function double(number){
+    if(isNaN(number)){
+        throw new Error(number + 'is not a number')
+    }
+    return number * 2;
+}
+try{
+   const  y= double('hello') 
+   console.log(y);
+}catch(error){
+    console.log(error)
+};
