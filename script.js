@@ -1,33 +1,15 @@
-try{
-    console.log(x);
-} catch(error) {
-    console.log("Error" + error);
-}
-
-
-
-fetch('https://jsonplaceholder.typicode.com/posts')
-    .then((res) => res.json())
-    .then((data) => {
-        console.log(data)
-    })
+const getUsers = async () => {
     try{
-        
+    const response = await fetch ('http://jsonplaceholder.typicode.com/users');
+    
+
+    const data = await response.text();
+    console.log(data);
     }catch(error){
-      console.log("Error" + error)
+     console.log(" Is not working " + error)
     }
-
-
-
-function double(number){
-    if(isNaN(number)){
-        throw new Error(number + 'is not a number')
-    }
-    return number * 2;
 }
-try{
-   const  y= double('hello') 
-   console.log(y);
-}catch(error){
-    console.log(error)
-};
+
+
+
+getUsers();
