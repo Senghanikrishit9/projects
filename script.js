@@ -1,17 +1,29 @@
-function cursuccess(pos){
-    const coords = pos.coords;
+class User {
+    constructor(name, email) {
+        this.name = name;
+        this.email = email;
+    }
 
-   console.log(`latitude: ${coords.latitude}`);
-   console.log(`longitude: ${coords.longitude}`);
-   console.log(`within: ${coords.accuracy} meters`);
+    createProfile() {
+        console.log("Profile created for:");
+        console.log("Name:", this.name);
+        console.log("Email:", this.email);
+        console.log("----------------------");
+    }
+
+    logout() {
+        console.log(this.name + " has logged out.");
+    }
 }
 
-function curError(err) {
-    console.log(`Error : + ${err.code} +  ${err.message}`);
-}
-function options(){
-   console.log()
-}
+// Creating users
+const user1 = new User('krishit', 'krishitsenghani22@gmail.com');
+const user2 = new User('krish', 'krishsenghani79@gmail.com');
+const user3 = new User('devander', 'devander34@gmail.com');
 
+// Calling methods
+user1.createProfile();
+user2.createProfile();
+user3.createProfile();
 
-navigator.geolocation.getCurrentPosition(cursuccess, curError, options);
+user1.logout();
