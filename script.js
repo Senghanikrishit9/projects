@@ -1,29 +1,28 @@
-class User {
-    constructor(name, email) {
-        this.name = name;
-        this.email = email;
-    }
+const strlit = 'hello';
+const strObj = new String('hello');
 
-    createProfile() {
-        console.log("Profile created for:");
-        console.log("Name:", this.name);
-        console.log("Email:", this.email);
-        console.log("----------------------");
-    }
+console.log(strlit,typeof strlit);
+console.log(strObj,typeof strObj);
 
-    logout() {
-        console.log(this.name + " has logged out.");
-    }
+// boxing
+console.log(strlit.toUpperCase());
+console.log(strlit[0]);
+
+console.log(strlit.constructor);
+console.log(strObj.constructor);
+
+
+const funlit = function(x) {
+    return x * x;
 }
 
-// Creating users
-const user1 = new User('krishit', 'krishitsenghani22@gmail.com');
-const user2 = new User('krish', 'krishsenghani79@gmail.com');
-const user3 = new User('devander', 'devander34@gmail.com');
+console.log(funlit , typeof funlit);
 
-// Calling methods
-user1.createProfile();
-user2.createProfile();
-user3.createProfile();
+const obj1 = {};
+const obj2 = new Object();
 
-user1.logout();
+console.log(obj1,typeof obj1);
+console.log(obj2, typeof obj2);
+
+
+
