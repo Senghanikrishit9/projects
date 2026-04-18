@@ -1,28 +1,58 @@
-const strlit = 'hello';
-const strObj = new String('hello');
-
-console.log(strlit,typeof strlit);
-console.log(strObj,typeof strObj);
-
-// boxing
-console.log(strlit.toUpperCase());
-console.log(strlit[0]);
-
-console.log(strlit.constructor);
-console.log(strObj.constructor);
-
-
-const funlit = function(x) {
-    return x * x;
+function Rectangle(name, width, height){
+    this.name = name;
+    this.width = width;
+    this.height = height;
+    this.area = function() {
+        return this.width * this.height;
+    };
 }
 
-console.log(funlit , typeof funlit);
+const  rect1 = new Rectangle('rectangle 1',20,40);
+const rect2 = new Rectangle('recatangle 2',10,30);
 
-const obj1 = {};
-const obj2 = new Object();
+console.log(rect1.name,rect2.height);
+console.log(rect1['width']);
 
-console.log(obj1,typeof obj1);
-console.log(obj2, typeof obj2);
+// Add property
+rect1.color = 'red';
+
+rect1.perimeter = () => 2 * (rect1.width + rect1.height);
+
+// Delete
+delete rect2.perimeter;
+
+// check property
+console.log(rect1.hasOwnProperty('color'));
+console.log(rect2.hasOwnProperty('color'));
+
+// Get keys 
+console.log(Object.keys(rect1));
+
+// Get values
+console.log(Object.values(rect1));
+
+// Get entries
+console.log(Object.entries(rect1));
+
+for( let [keys, values] of Object.entries(rect1)) {
+    if(typeof values !== 'function'){
+         console.log(`${keys} - ${values}`);
+    }
+    
+}
+
+
+
+
+function home() {
+    this.home1 = "home1",
+    this.home2 = "home2",
+    this.home3 = "home3"
+}
+
+let homes = new home();
+
+console.log(homes.home1);
 
 
 
