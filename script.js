@@ -1,36 +1,38 @@
-function Shape(name) {
-    this.name = name;
-};
+function player(name) {
+ this.name = name,
+ this.lvl = 1,
+ this.points = 0;
+ }
 
-Shape.prototype.logname = function () {
-    console.log(`shape Name : ${this.name}`);
+player.prototype.gainxp = function (xp){
+    this.points += xp;
 
-}
+    if(this.points >= 10){
+        this.lvl++;
+        this.points -= 10;
+    }
+ }
 
-function Rectangle(name, height, width) {
-    Shape.call(this, name);
+ player.prototype.describe = function() {
+    return`${this.name} is level ${this.lvl} with ${this.points} experience points`
+ }
 
-    this.height = height;
-    this.width = width;
-};
-// Inhertis shape prototype
-Rectangle.prototype = Object.create(Shape.prototype);
 
-Rectangle.prototype.logname = function(){
-    console.log(`rectangle Name : ${this.name}`);
-    
-}
+ const player1 = new player('krish');
+ const player2 = new player('krishit');
 
-function circle(name, radius) {
-    Shape.call(this, name);
-    this.radius = radius;
-};
 
-const rect = new Rectangle("rectangle", 40, 40);
-// console.log(rect);
+ player1.gainxp(4);
+ player1.gainxp(7);
+ player1.gainxp(2);
+ player1.gainxp(9);
+ 
+ player2.gainxp(3);
+ player2.gainxp(5);
+ player2.gainxp(8);
+ 
+ console.log(player1.describe());
+ console.log(player2.describe());
 
-const circle1 = new circle("krishit", 20);
-// console.log(circle1);
 
-rect.logname();
-
+ 
