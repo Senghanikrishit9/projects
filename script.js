@@ -1,14 +1,17 @@
-class App{
-    constructor(){
-        this.servername = 'localhost';
+let arr  = [10,20,30,40,30,40];
 
-    document.querySelector("button").addEventListener("click",this.getservername.bind(this))
-    }
-
-    getservername(){
-        console.log(this.servername);
-        
-    }
+function Notdupilcate(){
+    let Notdup = arr.filter((items,index) => {
+        return arr.indexOf(items) === index ;
+    })
+    console.log(Notdup);
+    
+}
+function largevalue () {
+    let large = Math.min(...arr)
+    console.log(large);
+    
 }
 
-const app = new App()
+largevalue();
+Notdupilcate();
