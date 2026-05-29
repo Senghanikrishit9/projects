@@ -1,17 +1,21 @@
-let arr  = [10,20,30,40,30,40];
+class Wallet {
+    constructor(){
+        this._balnace = 0;
+    }
+ deposit(amount){
+    this._balnace += amount;
+ }  
+ 
+ withdraw(amount){
+    this._balnace-= amount;
+ }
+ getBalance(){
+    return this._balnace;
+ }
 
-function Notdupilcate(){
-    let Notdup = arr.filter((items,index) => {
-        return arr.indexOf(items) === index ;
-    })
-    console.log(Notdup);
-    
-}
-function largevalue () {
-    let large = Math.min(...arr)
-    console.log(large);
-    
 }
 
-largevalue();
-Notdupilcate();
+const Wallet = new wallet();
+Wallet.deposit(300);
+Wallet.withdraw(50);
+console.log(Wallet.getBalance());
