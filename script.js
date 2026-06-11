@@ -1,11 +1,16 @@
-let amount = Number(prompt("What is your final amount"))
+Math.PI = 4
+console.log(Math.PI);
 
-if(amount>0 && amount <=5000){
-    console.log("you cannot get any discount")
-}else if(amount>5001 && amount <=7000){
-    console.log("you can get 5% discount")
-}else if(amount>7001 && amount<=9000){
-    console.log("you can get 10% discount")
-}else{
-    console.log("you can get  20% discount");
+let descriptor = Object.getOwnPropertyDescriptor(Math,'PI');
+console.log(descriptor);
+
+const reatobj = {
+    name : 'Reactangle 1',
+    width : 10,
+    hight : 10
 }
+
+ descriptor = Object.getOwnPropertyDescriptor(reatobj,'name');
+console.log(descriptor);
+
+
